@@ -40,11 +40,12 @@
   flex-direction: column;
   border: 1px solid black;
   margin-left: 7vw;
+  margin-top: 2vh;
 }
 
 .pie{
   margin-left: 35vw;
-  margin-top: -100pt;
+  margin-top: -20vh;
 }
 
 .frame{
