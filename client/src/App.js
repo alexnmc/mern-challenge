@@ -8,7 +8,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      data2: [],
+      data: [],
       firstName: '',
       lastName: '',
       participation: '',
@@ -17,7 +17,7 @@ class App extends Component {
   
   componentDidMount(){
     axios.get('http://localhost:8000/data').then(res => {
-        this.setState({data2: res.data})
+        this.setState({data: res.data})
     })
   }
   
@@ -26,7 +26,7 @@ class App extends Component {
       const {firstName, lastName, participation} = this.state
       axios.post('http://localhost:8000/data', {firstName, lastName, participation}).then(res => {
         axios.get('http://localhost:8000/data').then(res => {
-           this.setState({data2: res.data})
+           this.setState({data: res.data})
       })
     })
       this.setState({firstName: '', lastName: '', participation: ''})
@@ -77,7 +77,7 @@ class App extends Component {
               <h2 className = 'title'>Last Name</h2>
               <h2 className = 'title'>Participation</h2>
             </div>
-            {this.state.data2.sort(function (a, b) {
+            {this.state.data.sort(function (a, b) {
                 return a.participation - b.participation
               }).map((item, index) => {
               return(
@@ -95,7 +95,7 @@ class App extends Component {
           <DonutChart
             innerRadius={0.40}
             outerRadius={0.60}
-            data={this.state.data2.map(item => item = {label: item.firstName+' '+item.lastName, value: item.participation})} 
+            data={this.state.data.map(item => item = {label: item.firstName+' '+item.lastName, value: item.participation})} 
           />
         </div>
       </div>
