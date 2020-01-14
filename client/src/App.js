@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './App.css'
 import axios from 'axios'
-import DonutChart from 'react-donut-chart';
+import DonutChart from 'react-donut-chart'
 
 
 class App extends Component {
@@ -95,7 +95,8 @@ class App extends Component {
           <DonutChart
             innerRadius={0.40}
             outerRadius={0.60}
-            data={this.state.data2.map(item => item = {label: item.firstName+' '+item.lastName, value: item.participation})} />
+            data={this.state.data2.map(item => item = {label: item.firstName+' '+item.lastName, value: item.participation})} 
+          />
         </div>
       </div>
     )
