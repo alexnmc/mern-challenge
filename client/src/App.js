@@ -39,10 +39,24 @@ class App extends Component {
     })
   }
 
+  handleDelete = () => {
+    if(this.state.data.length > 0){
+      var answer = window.confirm("Are you sure you want to delete all data?")
+      if(answer){
+        axios.delete('http://localhost:8000/data').then(res => {
+            this.setState({data: []})
+        })
+      }
+    }else{
+      alert("no data")
+    }
+  }
+
   render(){
     return (
       <div className="App">
-        <form className = 'dataForm' onSubmit={this.handleSubmit} >
+        <div className = "dataForm">
+        <form onSubmit={this.handleSubmit} >
           <input className = "input"
             type='text' 
             name='firstName'
@@ -68,7 +82,9 @@ class App extends Component {
             required
           />
           <button className = "submit">SEND</button>
-        </form> 
+        </form>
+        <button className = "delete" onClick = {() => this.handleDelete()}>ERASE</button>
+        </div>
         <h1>DATA</h1>
         <div className = 'table'>
             <div className = 'frame'>

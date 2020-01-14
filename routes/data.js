@@ -8,7 +8,7 @@ dataRouter.post('/', (req, res, next) => {      // regular post request without 
     const newData = new Data(req.body)
     newData.save((err,data) => {
         if (err) {
-            res.status(400)
+            res.status(500)
             return next(err)
         }
         return res.status(201).send('data saved')
@@ -19,7 +19,7 @@ dataRouter.post('/', (req, res, next) => {      // regular post request without 
 dataRouter.get('/', (req, res, next) => {    
     Data.find((err, data) => {
         if(err) {
-            res.status(400)
+            res.status(500)
             return next(err)
         }
         return res.status(200).send(data)
@@ -27,7 +27,7 @@ dataRouter.get('/', (req, res, next) => {
 })
 
 dataRouter.delete('/', (req, res, next) => {
-    Data.remove((err, data) => {      // for postman testing, deletes everything !
+    Data.deleteMany((err, data) => {      // for postman testing, deletes everything !
         if (err) {
             res.status(500)
             return next(err)

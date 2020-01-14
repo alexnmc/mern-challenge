@@ -31,7 +31,6 @@
   font-weight: 600;
 }
 
-
 .table{
   display: flex;
   flex-direction: column;
@@ -40,6 +39,17 @@
   margin-top: 2vh;
   width:460px;
   position: fixed;
+}
+
+.delete{
+  width: 120px;
+  height: 40px;
+  margin: 10px;
+  font-size: 15px;
+  background-color:#03a1fccc;
+  color: rgb(255, 1, 1);
+  border: 2px solid white;
+  font-weight: 900;
 }
 
 .pie{
