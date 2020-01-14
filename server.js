@@ -7,9 +7,9 @@ const PORT =  8000
 app.use(express.json()) 
 app.use("/data", require("./routes/data"))
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"))
-});
+app.use(express.static(path.join(__dirname, "client", "build")))
+
+
 
 
 mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost:27017/fullstack', {useNewUrlParser: true}, () => {
@@ -17,6 +17,10 @@ mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost:27017/fullstack'
 })
 mongoose.set('useCreateIndex', true); // stops the error message...
 
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"))
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on Port ${PORT} sir!`)
