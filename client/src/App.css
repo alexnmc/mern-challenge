@@ -31,9 +31,6 @@
   font-weight: 600;
 }
 
-.dataContainer{
-  display: flex;
-}
 
 .table{
   display: flex;
@@ -41,11 +38,14 @@
   border: 1px solid black;
   margin-left: 7vw;
   margin-top: 2vh;
+  width:460px;
+  position: fixed;
 }
 
 .pie{
-  margin-left: 35vw;
-  margin-top: -20vh;
+  margin-left: 45vw;
+  margin-top: -5vh;
+  position: fixed
 }
 
 .frame{

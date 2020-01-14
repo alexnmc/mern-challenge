@@ -70,8 +70,7 @@ class App extends Component {
           <button className = "submit">SEND</button>
         </form> 
         <h1>DATA</h1>
-        <div className = 'dataContainer'>
-          <div className = 'table'>
+        <div className = 'table'>
             <div className = 'frame'>
               <h2 className = 'index2'>{}</h2>
               <h2 className = 'title'>First Name</h2>
@@ -91,7 +90,6 @@ class App extends Component {
               )
             })
             }
-          </div>
         </div>
         <div className ='pie'>
           <DonutChart
