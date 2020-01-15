@@ -29,6 +29,7 @@
   color: white;
   border: 2px solid white;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .table{
@@ -50,6 +51,7 @@
   color: rgb(255, 1, 1);
   border: 2px solid white;
   font-weight: 900;
+  cursor: pointer;
 }
 
 .pie{
