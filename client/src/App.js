@@ -17,19 +17,19 @@ class App extends Component {
   
   componentDidMount(){
     axios.get('/data').then(res => {
-        this.setState({data: res.data})
+      this.setState({data: res.data})
     })
   }
   
   handleSubmit = (e) => {
     e.preventDefault()
-      const {firstName, lastName, participation} = this.state
-      axios.post('/data', {firstName, lastName, participation}).then(res => {
-        axios.get('/data').then(res => {
-           this.setState({data: res.data})
+    const {firstName, lastName, participation} = this.state
+    axios.post('/data', {firstName, lastName, participation}).then(res => {
+      axios.get('/data').then(res => {
+        this.setState({data: res.data})
       })
     })
-      this.setState({firstName: '', lastName: '', participation: ''})
+    this.setState({firstName: '', lastName: '', participation: ''})
   }
 
   handleChange = (e) => {
@@ -54,57 +54,56 @@ class App extends Component {
 
   render(){
     return (
-      <div className="App">
+      <div className = "App">
         <div className = "dataForm">
-        <form onSubmit={this.handleSubmit} >
-          <input className = "input"
-            type='text' 
-            name='firstName'
-            placeholder='First Name'
-            value={this.state.firstName} 
-            onChange={this.handleChange}
-            required
-          />
-          <input className = "input"
-            type='text' 
-            name='lastName'
-            placeholder='Last Name'
-            value={this.state.lastName} 
-            onChange={this.handleChange}
-            required
-          />
-          <input className = "input"
-            name='participation'
-            type='number' 
-            placeholder='Participation'
-            value={this.state.participation} 
-            onChange={this.handleChange}
-            required
-          />
-          <button className = "submit">SEND</button>
-        </form>
-        <button className = "delete" onClick = {() => this.handleDelete()}>ERASE</button>
+          <form onSubmit = {this.handleSubmit} >
+            <input className = "input"
+              type='text' 
+              name='firstName'
+              placeholder='First Name'
+              value={this.state.firstName} 
+              onChange={this.handleChange}
+              required
+            />
+            <input className = "input"
+              type='text' 
+              name='lastName'
+              placeholder='Last Name'
+              value={this.state.lastName} 
+              onChange={this.handleChange}
+              required
+            />
+            <input className = "input"
+              name='participation'
+              type='number' 
+              placeholder='Participation'
+              value={this.state.participation} 
+              onChange={this.handleChange}
+              required
+            />
+            <button className = "submit">SEND</button>
+          </form>
+          <button className = "delete" onClick = {() => this.handleDelete()}>ERASE</button>
         </div>
         <h1>DATA</h1>
         <div className = 'table'>
-            <div className = 'frame'>
-              <h2 className = 'index2'>{}</h2>
-              <h2 className = 'title'>First Name</h2>
-              <h2 className = 'title'>Last Name</h2>
-              <h2 className = 'title'>Participation</h2>
-            </div>
-            {this.state.data.sort(function (a, b) {
+          <div className = 'frame'>
+            <h2 className = 'index2'>{}</h2>
+            <h2 className = 'title'>First Name</h2>
+            <h2 className = 'title'>Last Name</h2>
+            <h2 className = 'title'>Participation</h2>
+          </div>
+            {this.state.data.sort(function (a, b) {    // sorting data in increasing order
                 return a.participation - b.participation
               }).map((item, index) => {
-              return(
-                <div className = 'frame' key = {item._id}>
-                  <h2 className = 'index'>{index+1}</h2>
-                  <h2>{item.firstName}</h2>
-                  <h2>{item.lastName}</h2>
-                  <h2>{item.participation}%</h2>
-                </div>
-              )
-            })
+                return(
+                  <div className = 'frame' key = {item._id}>
+                    <h2 className = 'index'>{index+1}</h2>
+                    <h2>{item.firstName}</h2>
+                    <h2>{item.lastName}</h2>
+                    <h2>{item.participation}%</h2>
+                  </div>
+              )})
             }
         </div>
         <div className ='pie'>
@@ -119,4 +118,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App
