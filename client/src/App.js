@@ -16,7 +16,7 @@ class App extends Component {
   }
   
   componentDidMount(){
-    axios.get('http://localhost:8000/data').then(res => {
+    axios.get('/data').then(res => {
         this.setState({data: res.data})
     })
   }
@@ -24,8 +24,8 @@ class App extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
       const {firstName, lastName, participation} = this.state
-      axios.post('http://localhost:8000/data', {firstName, lastName, participation}).then(res => {
-        axios.get('http://localhost:8000/data').then(res => {
+      axios.post('/data', {firstName, lastName, participation}).then(res => {
+        axios.get('/data').then(res => {
            this.setState({data: res.data})
       })
     })
@@ -43,7 +43,7 @@ class App extends Component {
     if(this.state.data.length > 0){
       var answer = window.confirm("Are you sure you want to delete all data?")
       if(answer){
-        axios.delete('http://localhost:8000/data').then(res => {
+        axios.delete('/data').then(res => {
             this.setState({data: []})
         })
       }
