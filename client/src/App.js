@@ -114,9 +114,15 @@ class App extends Component {
           <DonutChart
             innerRadius={0.40}
             outerRadius={0.70}
-            height={document.documentElement.clientWidth < 900 ? 300 : 500}
-            width={document.documentElement.clientWidth < 900 ? 450 : 750}
-            data={this.state.data.map(item => item = {label: item.firstName+' '+item.lastName, value: item.participation})} 
+            height={document.documentElement.clientWidth < 900 ? 250 : 500}
+            width={document.documentElement.clientWidth < 900 ? 325 : 750}
+            // on mobile view we display only the initials in the doghnut chart, to fit the screen
+            data={
+              document.documentElement.clientWidth < 900 ?
+              this.state.data.map(item => item = {label: item.firstName[0]+'.'+item.lastName[0]+'.', value: item.participation})
+              :
+              this.state.data.map(item => item = {label: item.firstName+' '+item.lastName, value: item.participation}) 
+            }
           />
         </div>
       </div>
