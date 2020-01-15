@@ -12,8 +12,12 @@ class App extends Component {
       firstName: '',
       lastName: '',
       participation: '',
+      call: window.addEventListener("resize", this.onResize)
     }
   }
+
+  onResize = () =>{if(document.documentElement.clientWidth < 900 || document.documentElement.clientWidth > 900 ){return window.location.reload()}}
+  //refresh the page for the mobile view
   
   componentDidMount(){
     axios.get('/data').then(res => {
@@ -110,8 +114,8 @@ class App extends Component {
           <DonutChart
             innerRadius={0.40}
             outerRadius={0.70}
-            height={document.documentElement.clientWidth < 900 ? 200 : 500}
-            width={document.documentElement.clientWidth < 900 ? 320 : 750}
+            height={document.documentElement.clientWidth < 900 ? 300 : 500}
+            width={document.documentElement.clientWidth < 900 ? 450 : 750}
             data={this.state.data.map(item => item = {label: item.firstName+' '+item.lastName, value: item.participation})} 
           />
         </div>
