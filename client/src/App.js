@@ -109,7 +109,9 @@ class App extends Component {
         <div className ='pie'>
           <DonutChart
             innerRadius={0.40}
-            outerRadius={0.60}
+            outerRadius={0.70}
+            height={document.documentElement.clientWidth < 900 ? 200 : 500}
+            width={document.documentElement.clientWidth < 900 ? 320 : 750}
             data={this.state.data.map(item => item = {label: item.firstName+' '+item.lastName, value: item.participation})} 
           />
         </div>
