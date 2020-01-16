@@ -12,12 +12,9 @@ class App extends Component {
       firstName: '',
       lastName: '',
       participation: '',
-      call: window.addEventListener("resize", this.onResize)
     }
   }
 
-  onResize = () => {if(document.documentElement.clientWidth < 1200){return window.location.reload()}}
-  //refresh the page for the mobile view
   
   componentDidMount(){
     axios.get('/data').then(res => {
@@ -116,15 +113,7 @@ class App extends Component {
             colors = {[ '#0066ff', '#00ff40', '#ff3c00', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722', '#795548', '#607d8b' ]}
             innerRadius={0.35}
             outerRadius={0.49}
-            height={document.documentElement.clientWidth < 1200 ? 250 : 500}
-            width={document.documentElement.clientWidth < 1200 ? 325 : 750}
-            // on mobile view we display only the initials in the doghnut chart, to fit the screen
-            data={
-              document.documentElement.clientWidth < 1200 ?
-              this.state.data.map(item => item = {label: item.firstName[0]+'.'+item.lastName[0]+'.', value: item.participation})
-              :
-              this.state.data.map(item => item = {label: item.firstName+' '+item.lastName, value: item.participation}) 
-            }
+            data={this.state.data.map(item => item = {label: item.firstName+' '+item.lastName, value: item.participation})}
           />
         </div>
       </div>
