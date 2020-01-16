@@ -67,6 +67,8 @@ html{
 
 .frame{
   display: flex;
+  width:auto;
+  border: 0px;
 }
 
 h1{
@@ -162,29 +164,38 @@ h2{
     background-color: #03a1fccc;
   }
    
-  .title,
-  h2{
-    width: 150px;
-    font-size:12px;
-  }
   
   .input{
+   
     width: 20vw;
+    height: auto;
+   
+    
+  }
+
+  h2,
+  .title,
+  .participation,
+  .participation2,
+  .lname,
+  .lname2{
+    width: 25vw;
+    max-width: 170px;
+    font-size: 10px;
   }
 
   .table{
     position: relative;
-    width: auto;
     margin: auto;
+    margin-bottom: 10vh;
   }
   
-  .frame{
-    width: auto
-  }
-
   .donutchart{
-    width: 500px;
+    width: 90vw;
+    height: auto;
+    display: flex;
     margin: auto;
     position: relative;
   }
 }
+
