@@ -47,6 +47,12 @@ html{
   position: fixed;
 }
 
+.donutchart{
+  width: 600px;
+  margin-top: -15vh;
+  position: fixed
+}
+
 .delete{
   width: 120px;
   height: 40px;
@@ -57,12 +63,6 @@ html{
   border: 2px solid white;
   font-weight: 900;
   cursor: pointer;
-}
-
-.pie{
-  margin-left: 45vw;
-  margin-top: -5vh;
-  position: fixed
 }
 
 .frame{
@@ -178,13 +178,13 @@ h2{
     margin: auto;
   }
   
-  .pie{
-    position: relative;
-    margin: auto;
-    margin-top: 40pt
-  }
-
   .frame{
     width: auto
+  }
+
+  .donutchart{
+    width: 500px;
+    margin: auto;
+    position: relative;
   }
 }
