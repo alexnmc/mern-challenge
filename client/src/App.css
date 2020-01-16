@@ -39,7 +39,8 @@ html{
 .table{
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border-top: 0.2px solid black;
+  border-left: 0.2px solid black;
   margin-left: 7vw;
   margin-top: 2vh;
   width:460px;
@@ -70,6 +71,8 @@ html{
 
 h2{
   border: 0.2px solid black;
+  border-top: 0px;
+  border-left: 0px;
   width: 140px;
   height: 30px;
   margin: 0px;
@@ -88,7 +91,7 @@ h2{
 }
 
 .title{
-  font-size: 16px;
+  font-size: 15px;
   height: 35px;
 }
 
