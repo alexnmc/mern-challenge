@@ -91,8 +91,8 @@ class App extends Component {
           <div className = 'frame'>
             <h2 className = 'index2'>{}</h2>
             <h2 className = 'title'>First Name</h2>
-            <h2 className = 'title'>Last Name</h2>
-            <h2 className = 'title'>Participation</h2>
+            <h2 className = 'lname2'>Last Name</h2>
+            <h2 className = 'participation2'>Participation</h2>
           </div>
             {
               this.state.data.sort(function (a, b) {    // sorting data in increasing order
@@ -102,8 +102,8 @@ class App extends Component {
                   <div className = 'frame' key = {item._id}>
                     <h2 className = 'index'>{index+1}</h2>
                     <h2>{item.firstName}</h2>
-                    <h2>{item.lastName}</h2>
-                    <h2>{item.participation}%</h2>
+                    <h2 className = 'lname'>{item.lastName}</h2>
+                    <h2 className = 'participation'>{item.participation}%</h2>
                   </div>
               )})
             }
