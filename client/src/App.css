@@ -76,7 +76,7 @@ h2{
   width: 140px;
   height: 30px;
   margin: 0px;
-  font-size: 14px;
+  font-size: 12.5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,7 +91,7 @@ h2{
 }
 
 .title{
-  font-size: 15px;
+  font-size: 14px;
   height: 35px;
 }
 
@@ -119,8 +119,8 @@ h2{
    
   .title,
   h2{
-    width: 22vw;
-    font-size:10px;
+    width: 150px;
+    font-size:12px;
   }
   
   .input{
