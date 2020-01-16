@@ -115,7 +115,7 @@ class App extends Component {
           <DonutChart
             colors = {[ '#0051ff', '#00ff40', '#ff3c00', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722', '#795548', '#607d8b' ]}
             innerRadius={0.35}
-            outerRadius={0.50}
+            outerRadius={0.49}
             height={document.documentElement.clientWidth < 1200 ? 250 : 500}
             width={document.documentElement.clientWidth < 1200 ? 325 : 750}
             // on mobile view we display only the initials in the doghnut chart, to fit the screen
