@@ -87,28 +87,28 @@ class App extends Component {
           <button className = "delete" onClick = {() => this.handleDelete()}>ERASE</button>
         </div>
         <h1>DATA</h1>
-        <div className = 'table'>
-          <div className = 'frame'>
-            <h2 className = 'index2'>{}</h2>
-            <h2 className = 'title'>First Name</h2>
-            <h2 className = 'lname2'>Last Name</h2>
-            <h2 className = 'participation2'>Participation</h2>
+        <div className = 'container'>
+          <div className = 'table'>
+            <div className = 'frame'>
+              <h2 className = 'index2'>{}</h2>
+              <h2 className = 'title'>First Name</h2>
+              <h2 className = 'lname2'>Last Name</h2>
+              <h2 className = 'participation2'>Participation</h2>
+            </div>
+              {
+                this.state.data.sort(function (a, b) {    // sorting data in increasing order
+                  return a.participation - b.participation
+                }).map((item, index) => {
+                  return(
+                    <div className = 'frame' key = {item._id}>
+                      <h2 className = 'index'>{index+1}</h2>
+                      <h2>{item.firstName}</h2>
+                      <h2 className = 'lname'>{item.lastName}</h2>
+                      <h2 className = 'participation'>{item.participation}%</h2>
+                    </div>
+                )})
+              }
           </div>
-            {
-              this.state.data.sort(function (a, b) {    // sorting data in increasing order
-                return a.participation - b.participation
-              }).map((item, index) => {
-                return(
-                  <div className = 'frame' key = {item._id}>
-                    <h2 className = 'index'>{index+1}</h2>
-                    <h2>{item.firstName}</h2>
-                    <h2 className = 'lname'>{item.lastName}</h2>
-                    <h2 className = 'participation'>{item.participation}%</h2>
-                  </div>
-              )})
-            }
-        </div>
-        <div className ='pie'>
           <DonutChart
             colors = {[ '#0066ff', '#00ff40', '#ff3c00', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722', '#795548', '#607d8b' ]}
             innerRadius={0.35}

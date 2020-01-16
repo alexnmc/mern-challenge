@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+ text-align: center;
 }
 
 html{
@@ -36,21 +36,28 @@ html{
   cursor: pointer;
 }
 
+.container{
+  width: 1350px;
+  height: auto;
+  margin: auto;
+}
+
 .table{
   display: flex;
   flex-direction: column;
   border-top: 1px solid rgba(143, 143, 143, 0.739);
   border-left: 1px solid rgba(143, 143, 143, 0.739);
-  margin-left: 7vw;
   margin-top: 2vh;
+  margin-left: 50px;
   width: auto;
   position: fixed;
 }
 
 .donutchart{
   width: 600px;
-  margin-top: -15vh;
-  position: fixed
+  height: auto;
+  position: fixed;
+  margin-top: -5vh;
 }
 
 .delete{
@@ -72,7 +79,7 @@ html{
 }
 
 h1{
-  margin-bottom: 10vh;
+  margin-bottom: 15vh;
 }
 
 h2{
@@ -142,17 +149,7 @@ h2{
   justify-content: flex-start;
 }
 
-@media only screen and (max-width: 1200px) {
-  
-
-  .App{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: auto
-  }
+@media only screen and (max-width: 1280px) {
   
   .dataForm{
     height: auto;
@@ -188,10 +185,20 @@ h2{
   
   .donutchart{
     width: 90vw;
+    max-width: 600px;
     height: auto;
     display: flex;
     margin: auto;
     position: relative;
+  }
+
+  .container{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
