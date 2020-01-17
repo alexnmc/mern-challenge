@@ -116,7 +116,7 @@ class App extends Component {
               }
           </div>
           <DonutChart
-            colors = {[ '#0066ff', '#00ff40', '#ff3c00', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722', '#795548', '#607d8b' ]}
+            colors = {[ '#0066ff', '#00ff40', '#ff3c00', '#673ab7', '#f76b00', '#c9c9c9', '#f7ca00', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722', '#795548', '#607d8b' ]}
             innerRadius={0.35}
             outerRadius={0.55}
             data={this.state.data.map(item => item = {label: item.firstName+' '+item.lastName, value: item.participation})}

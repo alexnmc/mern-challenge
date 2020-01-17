@@ -14,6 +14,7 @@ it('renders without crashing', () => {
 
 
 describe('App component tests', ()=> {
+    
     const wrapper = shallow(<App />);
     
     it('should have buttons for send and erase' , () => {
