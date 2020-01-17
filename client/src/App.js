@@ -57,8 +57,10 @@ class App extends Component {
     return (
       <div className = "App">
         <div className = "dataForm">
-          <form onSubmit = {this.handleSubmit} >
-            <input className = "input"
+          <form onSubmit = {this.handleSubmit} data-testid="form">
+            <input 
+              className = "input"
+              id = "firstName"
               type='text' 
               name='firstName'
               placeholder='First Name'
@@ -66,7 +68,9 @@ class App extends Component {
               onChange={this.handleChange}
               required
             />
-            <input className = "input"
+            <input 
+            className = "input" 
+              id = "lastName"
               type='text' 
               name='lastName'
               placeholder='Last Name'
@@ -74,7 +78,9 @@ class App extends Component {
               onChange={this.handleChange}
               required
             />
-            <input className = "input"
+            <input 
+              className = "input"
+              id = "participation"
               name='participation'
               type='number' 
               placeholder='Participation'
