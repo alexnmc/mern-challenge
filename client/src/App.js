@@ -88,9 +88,9 @@ class App extends Component {
               onChange={this.handleChange}
               required
             />
-            <button className = "submit">SEND</button>
+            <button id = "submit" className = "submit">SEND</button>
           </form>
-          <button className = "delete" onClick = {() => this.handleDelete()}>ERASE</button>
+          <button id = "delete" className = "delete" onClick = {() => this.handleDelete()}>ERASE</button>
         </div>
         <h1>DATA</h1>
         <div className = 'container'>
