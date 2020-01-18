@@ -4,7 +4,7 @@ const Data = require("../models/data")
 
 
 
-dataRouter.post('/', (req, res, next) => {      // regular post request without checking anything in the database
+dataRouter.post('/', (req, res, next) => {      
     const newData = new Data(req.body)
     newData.save((err,data) => {
         if (err) {
@@ -26,8 +26,9 @@ dataRouter.get('/', (req, res, next) => {
     })
 })
 
+
 dataRouter.delete('/', (req, res, next) => {
-    Data.deleteMany((err, data) => {      // for postman testing, deletes everything !
+    Data.deleteMany((err, data) => {      
         if (err) {
             res.status(500)
             return next(err)

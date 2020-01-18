@@ -13,7 +13,7 @@ it('renders without crashing', () => {
 });
 
 
-describe('App component tests', ()=> {
+describe('App component tests', () => {
     
     const wrapper = shallow(<App />);
     
@@ -36,6 +36,4 @@ describe('App component tests', ()=> {
         expect(wrapper.state('participation')).toEqual('');
         expect(wrapper.state('data')).toEqual([]);  // data must be an array
     });
-
-
 });
