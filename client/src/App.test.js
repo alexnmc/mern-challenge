@@ -36,4 +36,19 @@ describe('App component tests', () => {
         expect(wrapper.state('participation')).toEqual('');
         expect(wrapper.state('data')).toEqual([]);  // data must be an array
     });
+
+    it('calls submit with first name last name and participation', () => {
+        const handleSubmit = jest.fn()
+        const container = document.createElement('div');
+        ReactDOM.render(<App onSubmit={handleSubmit()}/>, container);
+        const form = container.querySelector('form');
+        const firstName = container.getElementsByClassName('firstName');
+        const lastName = container.getElementsByClassName('lastName');
+        const participation = container.getElementsByClassName('participation')
+        firstName.value = 'Alex';
+        lastName.value = 'Nemechek';
+        participation.value = 5
+        form.dispatchEvent(new window.Event('submit'))
+        expect(handleSubmit).toHaveBeenCalledTimes(1)
+    });
 });
