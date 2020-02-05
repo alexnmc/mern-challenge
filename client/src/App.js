@@ -92,7 +92,7 @@ class App extends Component {
           </form>
           <button id = "delete" className = "delete" onClick = {() => this.handleDelete()}>ERASE</button>
         </div>
-        <h1>DATA</h1>
+        <h1 id = "data">DATA</h1>
         <div className = 'container'>
           <div className = 'table'>
             <div className = 'frame'>

@@ -16,6 +16,10 @@ it('renders without crashing', () => {
 describe('App component tests', () => {
     
     const wrapper = shallow(<App />);
+
+    it('should have a TEXT header' , () => {
+        expect(wrapper.find('h1#data').text()).toEqual('DATA');
+    })
     
     it('should have buttons for send and erase' , () => {
         expect(wrapper.find('button#submit')).toHaveLength(1);
